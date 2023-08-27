@@ -13,7 +13,7 @@ public:
     {
         if (!OpenClipboard(nullptr))
             throw runtime_error("Can't open clipboard.");
-        // ... or define some custom exception class for clipboard errors.
+        
     }
 
     ~RaiiClipboard()
@@ -21,7 +21,7 @@ public:
         CloseClipboard();
     }
 
-    // Ban copy   
+     
 private:
     RaiiClipboard(const RaiiClipboard&);
     RaiiClipboard& operator=(const RaiiClipboard&);
@@ -52,7 +52,7 @@ private:
     HANDLE m_hData;
     const char* m_psz;
 
-    // Ban copy
+    
     RaiiTextGlobalLock(const RaiiTextGlobalLock&);
     RaiiTextGlobalLock& operator=(const RaiiTextGlobalLock&);
 };
